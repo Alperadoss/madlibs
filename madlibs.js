@@ -1,6 +1,6 @@
 /**
  * Complete the implementation of parseStory.
- *
+ 
  * parseStory retrieves the story as a single string from story.txt
  * (I have written this part for you).
  *
