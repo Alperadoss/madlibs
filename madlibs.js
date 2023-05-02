@@ -1,29 +1,11 @@
 /**
- * Complete the implementation of parseStory.
- 
  * parseStory retrieves the story as a single string from story.txt
- * (I have written this part for you).
  *
  * In your code, you are required (please read this carefully):
  * - to return a list of objects
  * - each object should definitely have a field, `word`
  * - each object should maybe have a field, `pos` (part of speech)
  *
- * So for example, the return value of this for the example story.txt
- * will be an object that looks like so (note the comma! periods should
- * be handled in the same way).
- *
- * Input: "Louis[n] went[v] to the store[n], and it was fun[a]."
- * Output: [
- *  { word: "Louis", pos: "noun" },
- *  { word: "went", pos: "verb", },
- *  { word: "to", },
- *  { word: "the", },
- *  { word: "store", pos: "noun" }
- *  { word: "," }
- *  ....
- *
- * There are multiple ways to do this, but you may want to use regular expressions.
  * Please go through this lesson: https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/regular-expressions/
  */
 let arrayOfText = [];
@@ -35,8 +17,18 @@ function parseStory(rawStory) {
     a: "adjective",
     v: "verb",
   };
+  const regexForCapture = /\[(a|v|n)/;
 
   let splittedWords = rawStory.split(/\s|\]/);
+  // special words detection
+
+  let ArrOfObjects = [];
+
+  splittedWords.map((item) => {
+    ArrOfObjects.push({ word: item, pos: regexForCapture.test(item) });
+  });
+  console.log(ArrOfObjects);
+  console.log(splittedWords);
   return {}; // This line is currently wrong :)
 }
 
