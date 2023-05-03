@@ -43,6 +43,9 @@ function parseStory(rawStory) {
  *
  * You'll want to use the results of parseStory() to display the story on the page.
  */
+
+//function'in icinde pos value'si varsa word value'sunu sifirla. sonra oraya span ata.
+//spana kelime yazilinca mutated array de guncellenecek. Sonra bunu 2. div'de sergileriz
 getRawStory()
   .then(parseStory)
   .then((processedStory) => {
