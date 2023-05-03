@@ -11,7 +11,6 @@
 let arrayOfText = [];
 
 function parseStory(rawStory) {
-  // Your code here.
   let specialWords = {
     n: "noun",
     a: "adjective",
@@ -20,15 +19,16 @@ function parseStory(rawStory) {
   const regexForCapture = /\[(a|v|n)/;
 
   let splittedWords = rawStory.split(/\s|\]/);
-  // special words detection
-
   let ArrOfObjects = [];
 
+  // creating objects of words and pushing into ArrOfObjects
   splittedWords.map((item) => {
     ArrOfObjects.push({ word: item, pos: regexForCapture.test(item) });
   });
-  console.log(ArrOfObjects);
-  console.log(splittedWords);
+  // Things to implement:
+  //1- pos value must be verb, adj, noun etc.
+  //2- create ana array for input
+
   return {}; // This line is currently wrong :)
 }
 
