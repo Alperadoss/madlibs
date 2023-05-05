@@ -25,12 +25,19 @@ function parseStory(rawStory) {
   splittedWords.map((item) => {
     ArrOfObjects.push({ word: item, pos: regexForCapture.test(item) });
   });
+  console.log(ArrOfObjects);
   // Things to implement:
   //1- pos value must be verb, adj, noun etc.
   //2- create ana array for input
 
   return {}; // This line is currently wrong :)
 }
+
+let string1 = "asdsd lsdklskd sd slks dlskdlss";
+let array1 = string1.split("l");
+console.log(array1);
+array1.join();
+console.log(array1);
 
 /**
  * All your other JavaScript code goes here, inside the function. Don't worry about
